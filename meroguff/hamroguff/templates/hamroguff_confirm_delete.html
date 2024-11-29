@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Hamro Guff
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5"> <!-- Added mt-5 for top margin -->
+    <h1 class="text-center mb-4">Are you sure that you want to delete the blog?</h1>
+    <form method="post" class="text-center">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'hamroguff_list' %}" class="btn btn-success">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
